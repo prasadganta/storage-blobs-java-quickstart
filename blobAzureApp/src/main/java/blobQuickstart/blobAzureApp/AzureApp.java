@@ -52,10 +52,10 @@ public class AzureApp
 	*    Then, update the storageConnectionString variable with your AccountName and Key and run the sample.
 	* *************************************************************************************************************************
 	*/
-	public static final String storageConnectionString = "UseDevelopmentStorage=true;";
-	//"DefaultEndpointsProtocol=https;" +
-	//"AccountName=<account-name>;" +
-	//"AccountKey=<account-key>";
+	public static final String storageConnectionString =
+			"DefaultEndpointsProtocol=https;" +
+			"AccountName=mystoreageaccount1;" +
+			"AccountKey=9pKfyCfIIQw5CXOD9cmBrd4yum09McYUNLRypbvTNStI3XDICcKLX8M3+KUp/ly1xDbWkg9AQLG2p5AHTeE9Tg==";
 
 
 	public static void main( String[] args )
@@ -122,11 +122,11 @@ public class AzureApp
 
 			System.out.println("Deleting the container");
 			try {
-				if(container != null)
+				if (container != null)
 					container.deleteIfExists();
-			} 
-			catch (StorageException ex) {
-				System.out.println(String.format("Service error. Http code: %d and error code: %s", ex.getHttpStatusCode(), ex.getErrorCode()));
+			} catch (StorageException ex) {
+				System.out.println(String.format("Service error. Http code: %d and error code: %s",
+						ex.getHttpStatusCode(), ex.getErrorCode()));
 			}
 
 			System.out.println("Deleting the source, and downloaded files");
